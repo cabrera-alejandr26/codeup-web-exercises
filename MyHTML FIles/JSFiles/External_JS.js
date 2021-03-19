@@ -1,3 +1,5 @@
+"use strict";
+
 var message = "Hello from JavaScript!";
 console.log(message);
 
@@ -48,3 +50,11 @@ console.log(totalPay);
 
 alert("Your total pay is: $" + totalPay);
 
+function increment(someNumber) {
+    return someNumber + 1;
+    console.log('you will never see this.');
+    return someNumber + 2; // This will never run
+}
+
+    var number = increment(5);
+    console.log(number);
