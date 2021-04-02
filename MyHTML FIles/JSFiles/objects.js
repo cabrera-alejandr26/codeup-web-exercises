@@ -180,7 +180,7 @@
         Last: "Please enter last name"
          }
     ];
-function createBook(title, AuthorFN, AuthorLN){
+function createBook(){
 
         var Question = confirm("Would you like to enter a book?");
         if(Question === true) {
