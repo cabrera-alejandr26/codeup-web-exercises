@@ -175,9 +175,9 @@
 
      var TheBooks = [
          {
-         Title: "Please Enter a title",
-        First: "Please enter first name",
-        Last: "Please enter last name"
+         Title: [],
+        First: [],
+        Last: []
          }
     ];
 function createBook(){
