@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+}
+#main-info {
+    /*width: auto;*/
+    /*height: auto;*/
+    /*margin: 0;*/
+
+}
+.fancy-header , h2, p {
+    color: #EDf5E1;
+    text-align: center;
+
+    margin: 0;
+    height: 100%;
+}
+.fancy-header {
+    font-family: "Noto Sans";
+}
+
+section {
+    font-family: "Noto Sans";
+    color: #EDf5E1;
+}
+
+#theTable, table {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #379683;
+    position: center;
+    text-align: center;
+    padding: 0;
+    /*border: 5px solid black;*/
+}
+table {
+    border: 5px solid black;
+    margin-top: 5px;
+    background-color: black;
+}
+th {
+    background-color: black;
+    text-align: left;
+    padding: 0;
+    margin:0;
+}
+td{
+    background-color:#EDf5E1;
+    color: black;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+#photo-back {
+    background-color:#EDf5E1;
+
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+}
+
+
+h2 {
+    font-weight: bolder;
+}
+
+body {
+    background-color: #5CDB95;
+}
+
+h2{
+    background-color: #05386B;
+    padding: 5px;
+}
+
+footer, header {
+    background-color: #05386B;
+    padding: 15px;
+    /*background-color: #379683;*/
+
+}
+
+#last, a {
+
+    text-align: center;
+}
+a{
+    color: #EDf5E1;
+    font-min-size: small;
+}
+
+a:hover{
+    color: hotpink;
+}
+hr{
+    color: black;
+    /*border: 5px;*/
+}
