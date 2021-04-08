@@ -13,9 +13,11 @@ body {
 
     margin: 0;
     height: 100%;
+
 }
 .fancy-header {
     font-family: "Noto Sans";
+    text-decoration: underline ;
 }
 
 section {
@@ -52,7 +54,10 @@ td{
 }
 
 #photo-back {
-    background-color:#EDf5E1;
+    background-color: #379683;
+    background-image: url(../../Images/pngkey.com-texture-background-png-483820.png);
+    background-repeat: repeat;
+    background-position: initial;
 
 }
 img {
@@ -60,6 +65,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+    border: 15px solid black;
 
 }
 
@@ -88,15 +94,14 @@ footer, header {
 
     text-align: center;
 }
-a{
-    color: #EDf5E1;
-    font-min-size: small;
-}
 
 a:hover{
-    color: hotpink;
+    color: yellow;
 }
-hr{
-    color: black;
-    /*border: 5px;*/
+a:active{
+    color:hotpink;
+}
+
+li {
+    list-style: square;
 }
