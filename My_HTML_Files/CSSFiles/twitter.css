@@ -56,7 +56,7 @@ a {
 }
 .profile-image {
     position: absolute;
-    top: 240px;
+    top: 235px;
     /*z-index: auto;*/
 }
 
@@ -106,7 +106,7 @@ width: calc(25% - 1em);
 .who-to-follow{
     width: calc(25% - 1em);
     margin: 0 .5em 0 .5em;
-    float:right;
+    float:left;
 
 }
 
@@ -114,6 +114,7 @@ width: calc(25% - 1em);
     width: calc(50% - 1em);
     margin: 0 .5em 0 .5em;
     float: left;
+
 
 }
 
