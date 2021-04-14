@@ -18,6 +18,7 @@ h2, h3 {
     margin: 0 auto;
     width: 80%;
     display: flex;
+    flex-direction: column;
 
 }
 
@@ -36,8 +37,9 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
+    justify-content: space-around;
 
-    /*flex-direction: column;*/
+
 
 }
 
@@ -126,7 +128,7 @@ section:nth-of-type(3) h3 {
 section:nth-of-type(5) {
     /* enter needed declarations here */
 
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -142,10 +144,9 @@ section:nth-of-type(6) {
     display: flex;
 
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    align-content: ;
-    flex-basis: auto;
+    justify-content: space-between;
+
 
 }
 
