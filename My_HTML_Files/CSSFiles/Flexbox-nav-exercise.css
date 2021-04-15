@@ -6,40 +6,43 @@ body {
 }
 nav {
     background: #333333;
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: center;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 5px;
 }
-
-
-/*.content {*/
-
-/*    display: flex;*/
-/*    margin-right: auto;*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-
-/*}*/
-.logo {
-    margin: 0 auto;
-
-}
-
-ul {
-    display: flex;
-    align-items: center;
+.content {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 
-}
-
-a {
-    margin-right: auto;
 }
 
 li{
-    padding:  8px;
+    font-family: 'montserrat' ,sans-serif;
+    margin: .5em;
 }
+
+a{
+    display: inline-block;
+}
+
+.left-side  {
+
+
+}
+
+a{
+    justify-content: flex-start;
+}
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
 
 
 nav a:hover {
