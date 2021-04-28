@@ -81,3 +81,7 @@ var diceUno = dice1(6,0);
 var diceDos = dice2(6,0);
 
 bothDice();
+
+var equation = 10 % 3;
+
+console.log(equation);
