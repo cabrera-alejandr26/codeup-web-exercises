@@ -2,8 +2,8 @@
 
 $(document).ready(function() {
 
-    alert("This is my jQueryExercise!");
-
+    var theBody = $(".everything").text();
+    alert(theBody);
 });
 
 $('#header').click(function(){
@@ -13,7 +13,7 @@ $('#header').click(function(){
 });
 
 $('p').css('font-size', '25px');
-$('.codeup').css({'border':"solid red 1px"});
+$('.codeup').css({'border':"solid red 1px",  "border-radius" : "5px"});
 $('li').css({'font-size': '20px'});
 $('p,h1,li').css({"background-color": "yellow"});
 
