@@ -19,14 +19,14 @@ function removeAll(x,y){
     for(let i = 0; i < x.length; i++){
         if(x[i] === y){
             x.splice(i,1);
-            i--;
+
         }
 
     }
     return x;
 }
 console.log('The array bugs without any changes is: ' + bugs);
-console.log(removeAll(bugs,"roach"));
+console.log(removeAll(bugs,"ant"));
 
 //Exercise #3
 //Make a function called randomIntBetween(min, max) that returns a random number between the min and the max.
