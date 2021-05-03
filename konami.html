@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body class="fullPage">
+<h1>Konami Code</h1>
+
+<!--<form action="">-->
+<!--    <label for="password">Konami Code: </label>-->
+<!--    <input id='password' type="password" name="password" placeholder="Enter the code...">-->
+<!--</form>-->
+
+<h2 class="status"></h2>
+<h1 class="finished"></h1>
+
+<script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+    });
+
+
+    var konamiArray = [38, 38, 40, 40,37,39,37,39,65,66,13];
+    var enterButton = [13];
+    let keyCount = 0;
+
+
+    function keyBoard(){
+        $(document).keyup(function(event){
+            if(event.keyCode === konamiArray[keyCount]){
+                $('.status').html('You Pressed the right key!')
+                $('.fullPage').css({'background-color': 'green'});
+                keyCount++;
+                if(keyCount === 11){
+                    $('.finished').html('Congrats! You figured out the secret code in order!');
+                    $('body').css({'background-color': 'yellowgreen'});
+                }
+                else{
+                    $('.finished').html('');
+                }
+
+            }
+            else{
+                $('.status').html('You Pressed the wrong key!')
+                $('.fullPage').css({'background-color': 'red'});
+            }
+            console.log(event.keyCode);
+        })
+
+    }
+
+    function success(){
+        if(keyCount === 10){
+            $('h1').html('Congrats! You figured out the secret code in order!');
+            $('body').css({'background-color': 'yellowgreen'});
+        }
+
+    }
+    // for(let i = 0; i < konamiArray.length; i++){
+    //     console.log(konamiArray[i]);
+    // }
+    // function keyBoard(){
+    //     $(document).keyup(function(event){
+    //         konamiArray.forEach(function(code,index) {
+    //             if(event.keyCode === code){
+    //                 console.log(code);
+    //                 $('body').css({'background-color': 'green'});
+    //             }
+    //             if(event.keyCode !== code){
+    //                 $('body').css({'background-color': 'red'});
+    //             }
+    //
+    //         })
+    //     });
+    // }
+
+    // function keyBoard(){
+    //     $(document).keyup(function(event){
+    //             for(let i = 0; i < konamiArray.length; i++){
+    //
+    //                 if(event.keyCode === konamiArray[0]){
+    //                     $('#status').html('You Pressed the right key!')
+    //                     $('body').css({'background-color': 'green'});
+    //
+    //                 }
+    //
+    //                 else if(event.keyCode !== konamiArray[i]){
+    //                     $('#status').html('You Pressed the wrong key!')
+    //                     $('body').css({'background-color': 'red'});
+    //                     break;
+    //                 }
+    //
+    //             }
+    //
+    //     });
+    // }
+
+    keyBoard();
+    success();
+
+
+
+
+
+    // loop through the array and log the values
+
+    // function keyBoard(){
+    //     $('body').css({'background-color' : 'red'});
+    // }
+
+
+
+
+</script>
+</body>
+</html>
