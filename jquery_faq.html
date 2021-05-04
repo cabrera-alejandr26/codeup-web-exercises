@@ -21,11 +21,53 @@
             of nature.</dd>
     </dl>
 
-        <h4>References:</h4>
-        <ul>
-            <li><a href="https://www.nationalparks.org/connect/blog/how-many-national-parks-are-there">https://www.nationalparks.org/connect/blog/how-many-national-parks-are-there</a></li>
-            <li><a href="https://www.britannica.com/science/national-park">https://www.britannica.com/science/national-park</a></li>
-        </ul>
+    <h3 id="first">Yellowstone National Park</h3>
+    <ul class="yellow-stone">
+        <li>fact</li>
+        <li>fact</li>
+        <li>fact</li>
+        <li>fact</li>
+    </ul>
+    <h3 id="second">Arches National Park</h3>
+    <ul class="arches">
+        <li>fact</li>
+        <li>fact</li>
+        <li>fact</li>
+        <li>fact</li>
+    </ul>
+
+    <h3 id="third">Yosemite National Park</h3>
+    <ul class="yosemite">
+        <li>fact</li>
+        <li>fact</li>
+        <li>fact</li>
+        <li>fact</li>
+    </ul>
+
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+
+    <button class="button2">Click Here!</button>
+
+<!--        <h4>References:</h4>-->
+<!--        <ul>-->
+<!--            <li><a href="https://www.nationalparks.org/connect/blog/how-many-national-parks-are-there">https://www.nationalparks.org/connect/blog/how-many-national-parks-are-there</a></li>-->
+<!--            <li><a href="https://www.britannica.com/science/national-park">https://www.britannica.com/science/national-park</a></li>-->
+<!--        </ul>-->
 
 
         <script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
@@ -55,6 +97,36 @@
                 $(this).css({"color" : "initial"});
             });
 
+            $('.button2').click(function(){
+                $('.yellow-stone').children().last().css({'background' : 'yellow'});
+                $('.arches').children().last().css({'background' : 'yellow'});
+                $('.yosemite').children().last().css({'background' : 'yellow'});
+            });
+
+            $('#first').click(function(){
+                $('#first').next().css({'font-weight' : 'bold'});
+            });
+            $('#second').click(function(){
+                $(this).next().css({'font-weight' : 'bold'});
+            });
+            $('#third').click(function(){
+                $(this).next().css({'font-weight' : 'bold'});
+            });
+
+            $('.yellow-stone').click(function(){
+                $(this).children().first().css({'color' : 'blue'});
+            });
+            $('.arches').click(function(){
+                $(this).children().first().css({'color' : 'blue'});
+            });
+            $('.yosemite').click(function(){
+                $(this).children().first().css({'color' : 'blue'});
+            });
+
+
+            $('#national-parks-heading').click(function(){
+                $('#national-parks-heading').next().css('background-color', 'salmon');
+            })
 
 
 
