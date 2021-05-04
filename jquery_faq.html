@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-faq</title>
+    <link rel="stylesheet" href="css/jquery_faq.css">
+</head>
+<body>
+    <header>
+        <img src="Images/nature.jpg" alt="nature">
+    </header>
+        <h1>Top 10 FAQs about National Parks</h1>
+        <p>(Click on any question to reveal definition!)</p>
+
+    <dl>
+        <dt id="q1" ><h4>How many national park sites are there in the United States?</h4></dt>
+        <dd class='q1'>There are 423 national park sites in the US.</dd>
+        <dt id="q2"><h4>What are national parks for?</h4></dt>
+        <dd class="q2">National parks are enormous pieces of land that are set aside by the national government in order to preserve the natural environment.<br>
+            They are mostly meant to protect the wildlife and plants that reside there, and also for people to visit these sites in order to appreciate their amazing wonders <br>
+            of nature.</dd>
+    </dl>
+
+        <h4>References:</h4>
+        <ul>
+            <li><a href="https://www.nationalparks.org/connect/blog/how-many-national-parks-are-there">https://www.nationalparks.org/connect/blog/how-many-national-parks-are-there</a></li>
+            <li><a href="https://www.britannica.com/science/national-park">https://www.britannica.com/science/national-park</a></li>
+        </ul>
+
+
+        <script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
+        <script>
+            // $('.reveal').click(function(){
+            //     // $(this).removeClass('.invisible');
+            //     $('.invisible').toggleClass('visible');
+            //     // $('.visible').removeClass('invisible')
+            //
+            // });
+
+            $('#q1').click(function(){
+                $(this).toggleClass('highlight');
+                $('.q1').toggleClass('visible');
+            });
+            $('#q2').click(function(){
+                $(this).toggleClass('highlight');
+                $('.q2').toggleClass('visible');
+            });
+
+            $('h1').hover(function(){
+                $(this).css({"background-color" : "black"});
+                $(this).css({"color" : "whitesmoke"});
+            },
+            function(){
+                $(this).css({"background-color" : "initial"});
+                $(this).css({"color" : "initial"});
+            });
+
+
+
+
+
+        </script>
+</body>
+</html>

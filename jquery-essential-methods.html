@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Essential Methods</title>
+</head>
+<body>
+        <h1>jQuery Essential Methods</h1>
+    <h2 id="leader">I am the leader</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis culpa debitis dicta distinctio dolorum, est eveniet nobis placeat, quam saepe, sapiente suscipit totam voluptate. Aut enim esse expedita minima quisquam?</p>
+<h2 id="follower">I am the follower</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolore ea eius eos exercitationem explicabo inventore, nisi numquam obcaecati odio quibusdam reiciendis sunt suscipit, tempora vero! Deserunt illo molestias sint!</p>
+    <button id="font-changer">Change Font</button>
+        <script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
+        <script>
+            var htmlMethod =$('#leader').html();
+            // alert(htmlMethod);
+            var followerContent = $('#follower').html('I am the leader');
+
+            if(followerContent.html() === 'I am the leader'){
+                $('#leader').html('What you are is a copycat!');
+            }
+
+            $("#font-changer").click(function(){
+                var currentFontFamily = $("body").css("font-family");
+                //alert(currentFontFamily);
+                if (currentFontFamily === "serif" || currentFontFamily === "Times") {
+                    $("body").css("font-family", "sans-serif");
+                } else {
+                    $("body").css("font-family", "serif");
+                }
+            });
+
+        </script>
+</body>
+</html>

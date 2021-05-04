@@ -1,0 +1,31 @@
+.q1 , .q2{
+    visibility: hidden;
+
+}
+
+.visible {
+    visibility: visible;
+    background-color: mediumpurple;
+}
+
+
+.highlight{
+    background-color: chocolate;
+    color: whitesmoke;
+}
+
+button{
+    color: whitesmoke;
+    border: 3px solid rebeccapurple;
+    border-radius: 50rem;
+    background-color: rebeccapurple;
+}
+
+body{
+    background-color: #BFD45D;
+}
+
+h4  {
+    margin: .5rem;
+}
+
