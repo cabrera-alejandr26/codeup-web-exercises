@@ -19,6 +19,8 @@ button{
     border: 3px solid rebeccapurple;
     border-radius: 50rem;
     background-color: rebeccapurple;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
 }
 
 body{
@@ -30,4 +32,9 @@ h4  {
 }
 
 
+
+.container{
+    display: flex;
+    justify-content: center;
+}
 

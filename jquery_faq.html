@@ -69,9 +69,25 @@
 <!--            <li><a href="https://www.britannica.com/science/national-park">https://www.britannica.com/science/national-park</a></li>-->
 <!--        </ul>-->
 
+<div class="container">
+    <img id="images" src="" alt="">
 
-        <script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
+</div>
+
+
+
+    <div class="container">
+        <button  onclick="monkeys()" class="button3 uno">Move Image 1</button>
+        <button  class="button3 dos">Move Image 2</button>
+        <button  class="button3 tres">Move Image 3</button>
+    </div>
+
+
+
+
+    <script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
         <script>
+
             // $('.reveal').click(function(){
             //     // $(this).removeClass('.invisible');
             //     $('.invisible').toggleClass('visible');
@@ -123,12 +139,11 @@
                 $(this).children().first().css({'color' : 'blue'});
             });
 
+        var images = ["Images/see-no-evil.png", "Images/speak-no-evil.png"];
 
-            $('#national-parks-heading').click(function(){
-                $('#national-parks-heading').next().css('background-color', 'salmon');
-            })
-
-
+            function monkeys(){
+               document.getElementById('images').src = images[1];
+            }
 
 
         </script>
