@@ -1,0 +1,51 @@
+body {
+    background-color: darksalmon;
+}
+table{
+    background-color: whitesmoke;
+    border: solid 5px rebeccapurple;
+    border-radius: 5rem;
+    height: 50vh;
+    width: 50vw;
+    margin-top: 5rem;
+}
+
+thead{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    padding: 2.5rem;
+    margin: 2.5rem;
+}
+
+#title{
+    background-color: mediumpurple;
+    color: whitesmoke;
+}
+#quant{
+    background-color: palevioletred;
+    color: whitesmoke;
+}
+#catg{
+    background-color: palevioletred;
+    color: whitesmoke;
+}
+
+#price{
+    background-color: mediumpurple;
+    color: whitesmoke;
+}
+
+button{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    border-radius: 5rem;
+    margin-top: 1rem;
+}
+
+.dark{
+    background-color: darkmagenta;
+}
+
+td{
+    border: solid 2px rebeccapurple;
+}

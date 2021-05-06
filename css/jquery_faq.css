@@ -23,6 +23,8 @@ button{
     margin-right: 2.5rem;
 }
 
+
+
 body{
     background-color: #BFD45D;
 }
@@ -31,7 +33,35 @@ h4  {
     margin: .5rem;
 }
 
-
+.image1{
+    width:150px;
+    height: 150px;
+    background-color: #05386B;
+    /*background-image: url("../Images/hear-no-evil.png");*/
+    background-size: cover;
+    margin: 2.5rem;
+}.image2{
+    width:150px;
+    height: 150px;
+    background-color: #05386B;
+    /*background-image: url("../Images/see-no-evil.png");*/
+    background-size: cover;
+    margin: 2.5rem;
+}.monkey4{
+    width:150px;
+    height: 150px;
+    background-color: #05386B;
+    background-image: url("../Images/see-no-evil.png");
+    background-size: cover;
+    margin: 2.5rem;
+}.monkey3{
+    width:150px;
+    height: 150px;
+    background-color: #05386B;
+    background-image: url("../Images/speak-no-evil.png");
+    background-size: cover;
+    margin: 2.5rem;
+}
 
 .container{
     display: flex;

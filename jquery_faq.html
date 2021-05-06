@@ -70,14 +70,13 @@
 <!--        </ul>-->
 
 <div class="container">
-    <img id="images" src="" alt="">
-
+    <div class="monkey1"><img class="box1 image1" src="Images/hear-no-evil.png" alt=""></div>
+    <div  class="monkey2"><img class="box2 image2" src="Images/see-no-evil.png" alt=""></div>
+    <div class="box3 monkey3"></div>
 </div>
 
-
-
     <div class="container">
-        <button  onclick="monkeys()" class="button3 uno">Move Image 1</button>
+        <button  class="button3 uno">Move Image 1</button>
         <button  class="button3 dos">Move Image 2</button>
         <button  class="button3 tres">Move Image 3</button>
     </div>
@@ -86,66 +85,7 @@
 
 
     <script src="js/jQuery 3.6.0/jquery-3.6.0.js"></script>
-        <script>
+     <script src="js/jquery_faq.js"></script>
 
-            // $('.reveal').click(function(){
-            //     // $(this).removeClass('.invisible');
-            //     $('.invisible').toggleClass('visible');
-            //     // $('.visible').removeClass('invisible')
-            //
-            // });
-
-            $('#q1').click(function(){
-                $(this).toggleClass('highlight');
-                $('.q1').toggleClass('visible');
-            });
-            $('#q2').click(function(){
-                $(this).toggleClass('highlight');
-                $('.q2').toggleClass('visible');
-            });
-
-            $('h1').hover(function(){
-                $(this).css({"background-color" : "black"});
-                $(this).css({"color" : "whitesmoke"});
-            },
-            function(){
-                $(this).css({"background-color" : "initial"});
-                $(this).css({"color" : "initial"});
-            });
-
-            $('.button2').click(function(){
-                $('.yellow-stone').children().last().css({'background' : 'yellow'});
-                $('.arches').children().last().css({'background' : 'yellow'});
-                $('.yosemite').children().last().css({'background' : 'yellow'});
-            });
-
-            $('#first').click(function(){
-                $('#first').next().css({'font-weight' : 'bold'});
-            });
-            $('#second').click(function(){
-                $(this).next().css({'font-weight' : 'bold'});
-            });
-            $('#third').click(function(){
-                $(this).next().css({'font-weight' : 'bold'});
-            });
-
-            $('.yellow-stone').click(function(){
-                $(this).children().first().css({'color' : 'blue'});
-            });
-            $('.arches').click(function(){
-                $(this).children().first().css({'color' : 'blue'});
-            });
-            $('.yosemite').click(function(){
-                $(this).children().first().css({'color' : 'blue'});
-            });
-
-        var images = ["Images/see-no-evil.png", "Images/speak-no-evil.png"];
-
-            function monkeys(){
-               document.getElementById('images').src = images[1];
-            }
-
-
-        </script>
 </body>
 </html>
