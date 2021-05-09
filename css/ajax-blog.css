@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+
+.container{
+    background-color: #333333;
+    height: 50vh;
+    width: 100vw;
+}
+
+p, h1{
+
+    color: cornsilk;
+}
+
+a{
+    text-decoration: none;
+    color: chocolate;
+}
