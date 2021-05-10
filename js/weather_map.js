@@ -64,10 +64,22 @@ function WeatherApp(){
         }
         Card1();
 
+        function Card2(){
 
 
-        $('#tomorrow').html(ToDate);
-        $('#tomorrowTemp').html(tomorrowTemp + "&deg" + "F");
+            $('#tomorrow').html(ToDate);
+            $('#tomorrowTemp').html(tomorrowTemp.toFixed(0) + "&deg" + "F");
+            $('#description2').html(tomorrow.weather[0].description);
+            function theStats (){
+                $('.card-text2').html("<li> Humidity: " + tomorrow.humidity + "% </li><li> Max: " + today.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + today.temp.min.toFixed(0) + "&deg" +
+                    "F </li><li> Morning: " + today.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
+                    "<li> Day: " + today.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + today.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
+            }
+            theStats();
+        }
+        Card2();
+
+
 
         $('#dayAfter').html(afterDate);
         $('#afterTemp').html(afterTemp + "&deg" + "F");

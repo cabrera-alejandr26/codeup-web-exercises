@@ -50,14 +50,14 @@
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
-        center: [-73.935242, 40.730610], // starting position [lng, lat]
+        center: [-73.935242, 40.730610], // starting position [lng, lat]//NewYork
         zoom: 4 // starting zoom
     });
 
     // ADD MOVEMENT FROM NY TO FAVORITE RESTAURANT
     setTimeout(function () {
         map.flyTo({
-            center: [-98.48852, 29.41725],
+            center: [-98.48852, 29.41725],//San Antonio
             zoom: 15,
             speed: 1,
         })
