@@ -6,7 +6,7 @@ li{
     list-style: none;
     padding-bottom: .5rem;
 }
-.card-text1{
+.card-text1 .card-text2 {
     padding: 0;
 }
 .cardOne{
@@ -21,9 +21,26 @@ li{
     visibility: hidden;
 }
 
- .info1{
-     padding-bottom:.5em;
- }
+
  .info{
      margin-bottom: 0;
+ }
+
+ .mainCard {
+     margin-left: 1rem;
+ }
+
+ #map{
+     height:40rem;
+     width:200rem;
+     margin-top: 5rem;
+ }
+ .search{
+     margin-top: 1rem;
+ }
+
+ button{
+     background-color: #05386B;
+     color: whitesmoke;
+     border-radius: 10%;
  }
