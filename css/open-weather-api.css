@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: #3B94D9;
 }
@@ -43,4 +47,14 @@ li{
      background-color: #05386B;
      color: whitesmoke;
      border-radius: 10%;
+ }
+
+ .card{
+     margin: 1rem;
+     border: #05386B solid  4px;
+     border-radius: 1rem;
+ }
+
+ .TempC{
+     padding-bottom: 10rem;
  }

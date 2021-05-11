@@ -1,136 +1,178 @@
 "use strict";
 
+function dayTimeHTML(day) {
+    var result = new Date(day.dt * 1000).toString();
+    // console.log(result);
+    var resultArray = result.split(" ");
+    // console.log(resultArray);
+    var resultObject = {
+        day: resultArray[0],
+        month: resultArray[1],
+        date: resultArray[2],
+        year: resultArray[3],
+    }
+    if (day === 0) {
+        resultObject.day = resultObject.day + " (Today)"
+    }
+    return resultObject;
+}
+
+function Card1(today){
+    var TODAY = dayTimeHTML(today);
+    var Today1 = TODAY.day + " " + TODAY.month + " " + TODAY.date + " " + TODAY.year;
+    var Today2 = TODAY.day + " " + TODAY.month + " " + TODAY.date + " ";
+    var todayTemp = today.temp.day;
+
+    $('#today1').html(Today2);
+    $('#todayTemp').html(todayTemp.toFixed(0) + "&deg" + "F");
+    $('#description1').html(today.weather[0].description);
+    function theStats (){
+        $('.card-text1').html("<li> Humidity: " + today.humidity + "% </li><li> Max: " + today.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + today.temp.min.toFixed(0) + "&deg" +
+            "F </li><li> Morning: " + today.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
+            "<li> Day: " + today.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + today.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
+    }
+    theStats();
+}
+Card1();
+
+function Card2(tomorrow){
+
+    var DAY2 = dayTimeHTML(tomorrow);
+    var Day2 = DAY2.day + " " + DAY2.month + " " + DAY2.date;
+    $('#tomorrow').html(Day2);
+    $('#tomorrowTemp').html(tomorrowTemp.toFixed(0) + "&deg" + "F");
+    $('#description2').html(tomorrow.weather[0].description);
+    function theStats (){
+        $('.card-text2').html("<li> Humidity: " + tomorrow.humidity + "% </li><li> Max: " + today.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + tomorrow.temp.min.toFixed(0) + "&deg" +
+            "F </li><li> Morning: " + tomorrow.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
+            "<li> Day: " + tomorrow.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + tomorrow.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
+    }
+    theStats();
+}
+Card2();
+
+function Card3(){
+
+
+    $('#dayAfter').html(Day3);
+    $('#afterTemp').html(afterTemp.toFixed(0) + "&deg" + "F");
+    $('#description3').html(dayAfter.weather[0].description);
+    function theStats (){
+        $('.card-text3').html("<li> Humidity: " + dayAfter.humidity + "% </li><li> Max: " + dayAfter.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + dayAfter.temp.min.toFixed(0) + "&deg" +
+            "F </li><li> Morning: " + dayAfter.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
+            "<li> Day: " + dayAfter.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + dayAfter.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
+    }
+    theStats();
+}
+Card3();
+
+function Card4(){
+
+
+    $('#dayFour').html(Day4);
+    $('#dayfourTemp').html(fourthTemp.toFixed(0) + "&deg" + "F");
+    $('#description4').html(day4.weather[0].description);
+    function theStats (){
+        $('.card-text4').html("<li> Humidity: " + day4.humidity + "% </li><li> Max: " + day4.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + day4.temp.min.toFixed(0) + "&deg" +
+            "F </li><li> Morning: " + day4.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
+            "<li> Day: " + day4.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + day4.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
+    }
+    theStats();
+}
+Card4();
+
+function Card5(){
+
+
+    $('#dayFive').html(Day5);
+    $('#dayfiveTemp').html(fifthTemp.toFixed(0) + "&deg" + "F");
+    $('#description5').html(day5.weather[0].description);
+    function theStats (){
+        $('.card-text5').html("<li> Humidity: " + day5.humidity + "% </li><li> Max: " + day5.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + day5.temp.min.toFixed(0) + "&deg" +
+            "F </li><li> Morning: " + day5.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
+            "<li> Day: " + day5.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + day5.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
+    }
+    theStats();
+}
+Card5();
 //Global Variable
 
 
 
-// var coordinates = [];
-//
-//
-// function WeatherApp(){
-//
-//     $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0].lat + "&lon=" + coordinates[0].lng + "&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
-//         console.log(resp);
-//         //Current Temp
-//         var feelsLikeToday = resp.current.feels_like;
-//         var actualTemp = resp.current.temp;
-//
-//         //Daily Weather
-//         var today = resp.daily[0];
-//         var tomorrow = resp.daily[1];
-//         var dayAfter = resp.daily[2];
-//         var day4 = resp.daily[3];
-//         var day5 = resp.daily[4];
-//
-//         //Date & Time
-//         var todayDate= new Date(resp.current.dt*1000).toString();//Current Time
-//         var todayDate2 = new Date(today.dt*1000).toString();
-//         var tomorrowDate= new Date(tomorrow.dt*1000).toString();
-//         var dayAfterDate= new Date(dayAfter.dt*1000).toString();
-//         var day4Date= new Date(day4.dt*1000).toString();
-//         var day5Date= new Date(day5.dt*1000).toString();
-//
-//         var currentDate = todayDate.replace('GMT-0500 (Central Daylight Time)','');
-//         var TodayDate = todayDate2.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-//         var ToDate = tomorrowDate.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-//         var afterDate = dayAfterDate.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-//         var fourthDate = day4Date.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-//         var fifthDate = day5Date.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-//
-//         //Temperatures
-//         var tomorrowTemp = tomorrow.temp.day;
-//         var afterTemp = dayAfter.temp.day;
-//         var todayTemp = today.temp.day;
-//         var fourthTemp = day4.temp.day;
-//         var fifthTemp = day5.temp.day;
-//
-//         //Actual temp
-//         $('#today').html(currentDate);
-//         $('#currentTemp').html("Temperature: " + actualTemp + "&deg" + "F" + "<br>" + "Feels Like: " + feelsLikeToday + "&deg" + "F");
-//
-//         //Humidity
-//
-//
-//         //Temp Cards
-//
-//         function Card1(){
-//
-//
-//             $('#today1').html(TodayDate);
-//             $('#todayTemp').html(todayTemp.toFixed(0) + "&deg" + "F");
-//             $('#description1').html(today.weather[0].description);
-//             function theStats (){
-//                 $('.card-text1').html("<li> Humidity: " + today.humidity + "% </li><li> Max: " + today.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + today.temp.min.toFixed(0) + "&deg" +
-//                     "F </li><li> Morning: " + today.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
-//                     "<li> Day: " + today.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + today.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
-//             }
-//             theStats();
-//         }
-//         Card1();
-//
-//         function Card2(){
-//
-//
-//             $('#tomorrow').html(ToDate);
-//             $('#tomorrowTemp').html(tomorrowTemp.toFixed(0) + "&deg" + "F");
-//             $('#description2').html(tomorrow.weather[0].description);
-//             function theStats (){
-//                 $('.card-text2').html("<li> Humidity: " + tomorrow.humidity + "% </li><li> Max: " + today.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + tomorrow.temp.min.toFixed(0) + "&deg" +
-//                     "F </li><li> Morning: " + tomorrow.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
-//                     "<li> Day: " + tomorrow.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + tomorrow.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
-//             }
-//             theStats();
-//         }
-//         Card2();
-//
-//         function Card3(){
-//
-//
-//             $('#dayAfter').html(afterDate);
-//             $('#afterTemp').html(afterTemp.toFixed(0) + "&deg" + "F");
-//             $('#description3').html(dayAfter.weather[0].description);
-//             function theStats (){
-//                 $('.card-text3').html("<li> Humidity: " + dayAfter.humidity + "% </li><li> Max: " + dayAfter.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + dayAfter.temp.min.toFixed(0) + "&deg" +
-//                     "F </li><li> Morning: " + dayAfter.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
-//                     "<li> Day: " + dayAfter.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + dayAfter.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
-//             }
-//             theStats();
-//         }
-//         Card3();
-//
-//         function Card4(){
-//
-//
-//             $('#dayFour').html(fourthDate);
-//             $('#dayfourTemp').html(fourthTemp.toFixed(0) + "&deg" + "F");
-//             $('#description4').html(day4.weather[0].description);
-//             function theStats (){
-//                 $('.card-text4').html("<li> Humidity: " + day4.humidity + "% </li><li> Max: " + day4.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + day4.temp.min.toFixed(0) + "&deg" +
-//                     "F </li><li> Morning: " + day4.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
-//                     "<li> Day: " + day4.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + day4.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
-//             }
-//             theStats();
-//         }
-//         Card4();
-//
-//         function Card5(){
-//
-//
-//             $('#dayFive').html(fifthDate);
-//             $('#dayfiveTemp').html(fifthTemp.toFixed(0) + "&deg" + "F");
-//             $('#description5').html(day5.weather[0].description);
-//             function theStats (){
-//                 $('.card-text5').html("<li> Humidity: " + day5.humidity + "% </li><li> Max: " + day5.temp.max.toFixed(0) + "&deg" + "F | " + "Min: " + day5.temp.min.toFixed(0) + "&deg" +
-//                     "F </li><li> Morning: " + day5.temp.morn.toFixed(0) + "&deg" + "F" + "</li>" +
-//                     "<li> Day: " + day5.temp.day.toFixed(0) + "&deg" + "F" + "</li><li> Night: " + day5.temp.night.toFixed(0) + "&deg" + "F" + "</li>");
-//             }
-//             theStats();
-//         }
-//         Card5();
-//
-//
-//     })//some data will have to be removed later on
-// }
+var coordinates = [29.4241200, -98.4936300];
+
+
+function WeatherApp(){
+
+    $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
+        console.log(resp);
+
+        // function reverseGeocode(coordinates, token) {
+        //     var baseUrl = 'https://api.mapbox.com';
+        //     var endPoint = '/geocoding/v5/mapbox.places/';
+        //     return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+        //         .then(function (res) {
+        //             return res.json();
+        //         })
+        //         // to get all the data from the request, comment out the following three lines...
+        //         .then(function (data) {
+        //             return data.features[0].place_name;
+        //         });
+        // }
+
+        //Current Temp
+        var feelsLikeToday = resp.current.feels_like;
+        var actualTemp = resp.current.temp;
+
+
+        //Daily Weather
+        //For Looping
+        var today = resp.daily[0];
+        var tomorrow = resp.daily[1];
+        var dayAfter = resp.daily[2];
+        var day4 = resp.daily[3];
+        var day5 = resp.daily[4];
+
+
+
+
+        //Date & Time
+
+
+        var DAY3 = dayTimeHTML(dayAfter);
+        var Day3 = DAY3.day + " " + DAY3.month + " " + DAY3.date;
+
+        var DAY4 = dayTimeHTML(day4);
+        var Day4 = DAY4.day + " " + DAY4.month + " " + DAY4.date;
+
+        var DAY5 = dayTimeHTML(day5);
+        var Day5 = DAY5.day + " " + DAY5.month + " " + DAY5.date;
+
+
+
+
+
+        //Temperatures
+
+        var tomorrowTemp = tomorrow.temp.day;
+        var afterTemp = dayAfter.temp.day;
+        var fourthTemp = day4.temp.day;
+        var fifthTemp = day5.temp.day;
+
+        //Actual temp
+        // $('#location').html(Location);
+        $('#today').html(Today1);
+        $('#currentTemp').html("Temperature: " + actualTemp.toFixed(0) + "&deg" + "F" + "<br>" + "Feels Like: " + feelsLikeToday.toFixed(0) + "&deg" + "F");
+
+        //Humidity
+
+
+        //Temp Cards
+
+
+
+    })//some data will have to be removed later on
+}
 
 
 function actions(){
@@ -189,7 +231,7 @@ function actions(){
 }
 
 actions();
-// WeatherApp();
+WeatherApp();
 
 
 // START POSITION IN THE MAP
@@ -207,10 +249,10 @@ var map = new mapboxgl.Map({
 setTimeout(function () {
     map.flyTo({
         center: [-98.48852, 29.41725],//San Antonio
-        zoom: 15,
+        zoom: 10,
         speed: 1,
     })
-}, 1000);
+}, 500);
 
 // ADD ZOOM AND ROTATION CONTROLS TO THE MAP
 map.addControl(new mapboxgl.NavigationControl());
@@ -250,16 +292,31 @@ var pushingCord = marker.on('dragend', function () {
     var latEX = parseFloat(theLat);
 
 
-    var coordinates = [theLat, theLong];
+    var coordinates = [latEX, longEX];
 
 
     function WeatherApp(){
 
-        $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
+        $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
             console.log(resp);
+
+            // function reverseGeocode(coordinates, token) {
+            //     var baseUrl = 'https://api.mapbox.com';
+            //     var endPoint = '/geocoding/v5/mapbox.places/';
+            //     return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+            //         .then(function (res) {
+            //             return res.json();
+            //         })
+            //         // to get all the data from the request, comment out the following three lines...
+            //         .then(function (data) {
+            //             return data.features[0].place_name;
+            //         });
+            // }
+
             //Current Temp
             var feelsLikeToday = resp.current.feels_like;
             var actualTemp = resp.current.temp;
+
 
             //Daily Weather
             var today = resp.daily[0];
@@ -268,31 +325,56 @@ var pushingCord = marker.on('dragend', function () {
             var day4 = resp.daily[3];
             var day5 = resp.daily[4];
 
-            //Date & Time
-            var todayDate= new Date(resp.current.dt*1000).toString();//Current Time
-            var todayDate2 = new Date(today.dt*1000).toString();
-            var tomorrowDate= new Date(tomorrow.dt*1000).toString();
-            var dayAfterDate= new Date(dayAfter.dt*1000).toString();
-            var day4Date= new Date(day4.dt*1000).toString();
-            var day5Date= new Date(day5.dt*1000).toString();
 
-            var currentDate = todayDate.replace('GMT-0500 (Central Daylight Time)','');
-            var TodayDate = todayDate2.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-            var ToDate = tomorrowDate.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-            var afterDate = dayAfterDate.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-            var fourthDate = day4Date.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
-            var fifthDate = day5Date.replace('2021 13:00:00 GMT-0500 (Central Daylight Time)','');
+            function dayTimeHTML(day) {
+                var result = new Date(day.dt * 1000).toString();
+                // console.log(result);
+                var resultArray = result.split(" ");
+                // console.log(resultArray);
+                var resultObject = {
+                    day: resultArray[0],
+                    month: resultArray[1],
+                    date: resultArray[2],
+                    year: resultArray[3],
+                }
+                if (day === 0) {
+                    resultObject.day = resultObject.day + " (Today)"
+                }
+                return resultObject;
+            }
+
+            //Date & Time
+            var TODAY = dayTimeHTML(today);
+            var Today1 = TODAY.day + " " + TODAY.month + " " + TODAY.date + " " + TODAY.year;
+            var Today2 = TODAY.day + " " + TODAY.month + " " + TODAY.date + " ";
+
+            var DAY2 = dayTimeHTML(tomorrow);
+            var Day2 = DAY2.day + " " + DAY2.month + " " + DAY2.date;
+
+            var DAY3 = dayTimeHTML(dayAfter);
+            var Day3 = DAY3.day + " " + DAY3.month + " " + DAY3.date;
+
+            var DAY4 = dayTimeHTML(day4);
+            var Day4 = DAY4.day + " " + DAY4.month + " " + DAY4.date;
+
+            var DAY5 = dayTimeHTML(day5);
+            var Day5 = DAY5.day + " " + DAY5.month + " " + DAY5.date;
+
+
+
+
 
             //Temperatures
+            var todayTemp = today.temp.day;
             var tomorrowTemp = tomorrow.temp.day;
             var afterTemp = dayAfter.temp.day;
-            var todayTemp = today.temp.day;
             var fourthTemp = day4.temp.day;
             var fifthTemp = day5.temp.day;
 
             //Actual temp
-            $('#today').html(currentDate);
-            $('#currentTemp').html("Temperature: " + actualTemp + "&deg" + "F" + "<br>" + "Feels Like: " + feelsLikeToday + "&deg" + "F");
+            // $('#location').html(Location);
+            $('#today').html(Today1);
+            $('#currentTemp').html("Temperature: " + actualTemp.toFixed(0) + "&deg" + "F" + "<br>" + "Feels Like: " + feelsLikeToday.toFixed(0) + "&deg" + "F");
 
             //Humidity
 
@@ -302,7 +384,7 @@ var pushingCord = marker.on('dragend', function () {
             function Card1(){
 
 
-                $('#today1').html(TodayDate);
+                $('#today1').html(Today2);
                 $('#todayTemp').html(todayTemp.toFixed(0) + "&deg" + "F");
                 $('#description1').html(today.weather[0].description);
                 function theStats (){
@@ -317,7 +399,7 @@ var pushingCord = marker.on('dragend', function () {
             function Card2(){
 
 
-                $('#tomorrow').html(ToDate);
+                $('#tomorrow').html(Day2);
                 $('#tomorrowTemp').html(tomorrowTemp.toFixed(0) + "&deg" + "F");
                 $('#description2').html(tomorrow.weather[0].description);
                 function theStats (){
@@ -332,7 +414,7 @@ var pushingCord = marker.on('dragend', function () {
             function Card3(){
 
 
-                $('#dayAfter').html(afterDate);
+                $('#dayAfter').html(Day3);
                 $('#afterTemp').html(afterTemp.toFixed(0) + "&deg" + "F");
                 $('#description3').html(dayAfter.weather[0].description);
                 function theStats (){
@@ -347,7 +429,7 @@ var pushingCord = marker.on('dragend', function () {
             function Card4(){
 
 
-                $('#dayFour').html(fourthDate);
+                $('#dayFour').html(Day4);
                 $('#dayfourTemp').html(fourthTemp.toFixed(0) + "&deg" + "F");
                 $('#description4').html(day4.weather[0].description);
                 function theStats (){
@@ -362,7 +444,7 @@ var pushingCord = marker.on('dragend', function () {
             function Card5(){
 
 
-                $('#dayFive').html(fifthDate);
+                $('#dayFive').html(Day5);
                 $('#dayfiveTemp').html(fifthTemp.toFixed(0) + "&deg" + "F");
                 $('#description5').html(day5.weather[0].description);
                 function theStats (){
@@ -377,6 +459,7 @@ var pushingCord = marker.on('dragend', function () {
 
         })//some data will have to be removed later on
     }
+
     WeatherApp();
 
 
@@ -385,6 +468,8 @@ var pushingCord = marker.on('dragend', function () {
     //  WHEN DRAG THE MOUSE, REMOVE THE POPUP
     marker.setPopup();
 });
+
+
 
 // YOU CAN DO THIS TOO
 marker.setPopup(popup);
@@ -410,7 +495,7 @@ $("#btn").click(function () {
             lng: info[0],
             lat: info[1]
         };
-        marker.setLngLat(newCenter);
+        marker.setLngLat(newCenter);//Update the coordinate
         popup.setHTML('<h3 class="font">' + userInput + '</h3>');
         map.flyTo({center: newCenter});
     });

@@ -12,83 +12,88 @@
 <body class="container-fluid d-flex-column justify-content-center align-items-center">
     <h1>Weather Void</h1>
     <div>
+        <h2 id="location"></h2>
         <h3 id="today"></h3>
         <p id="currentTemp"></p>
     </div>
 
 
+    <div class=" TempC container-fluid ">
 
-    <div class="row justify-content-around align-items-center ">
-        <!-- first Card -->
-        <div class=" card card1" style="width: 18rem;height: 6rem">
-            <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
-                <h4 class="info" id="today1"></h4>
-                <p class="info" id="todayTemp"></p>
-                <p class="info" id="description1"></p>
-            </div>
-            <img src="..." class="card-img-top" alt="">
-            <div class="card-body cardOne">
-                <ul class="card-text1">
 
-                </ul>
+        <div class="Temps row justify-content-center align-items-center ">
+            <!-- first Card -->
+            <div class=" Temps card card1" style="width: 18rem;height: 6rem">
+                <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
+                    <h4 class="info" id="today1"></h4>
+                    <p class="info" id="todayTemp"></p>
+                    <p class="info" id="description1"></p>
+                </div>
+                <img src="..." class="card-img-top" alt="">
+                <div class="card-body cardOne">
+                    <ul class="card-text1">
+
+                    </ul>
+                </div>
             </div>
+
+            <!-- Second Card -->
+            <div class=" Temps card card2" style="width: 18rem; height: 6rem;">
+                <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
+                    <h4 class="info" id="tomorrow"></h4>
+                    <p class="info" id="tomorrowTemp"></p>
+                    <p class="info" id="description2"></p>
+                </div>
+                <img src="..." class="card-img-top" alt="">
+                <div class="card-body cardTwo">
+                    <ul class="card-text2">
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3rd Card -->
+            <div class=" card card3" style="width: 18rem;height: 6rem">
+                <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
+                    <h4 class="info" id="dayAfter" ></h4>
+                    <p class="info" id="afterTemp"></p>
+                    <p class="info" id="description3"></p>
+                </div>
+                <img src="..." class="card-img-top" alt="">
+                <div class="card-body cardThree">
+                    <ul class="card-text3"></ul>
+                </div>
+            </div>
+
+            <!-- 4th Card -->
+            <div class="card card4" style="width: 18rem;height: 6rem">
+                <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
+                    <h4 class="info" id="dayFour"></h4>
+                    <p class="info" id="dayfourTemp"></p>
+                    <p class="info" id="description4"></p>
+                </div>
+                <img src="..." class="card-img-top" alt="">
+                <div class="card-body cardFour">
+                    <ul class="card-text4"></ul>
+                </div>
+            </div>
+
+            <!-- 5th Card -->
+            <div class=" card card5" style="width: 18rem;height: 6rem">
+                <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
+                    <h4 class="info" id="dayFive"></h4>
+                    <p class="info" id="dayfiveTemp"></p>
+                    <p class="info" id="description5"></p>
+                </div>
+                <img src="..." class="card-img-top" alt="">
+                <div class="card-body cardFive">
+                    <ul class="card-text5">Some quick example text to build on the card title and make up the bulk of the card's content.</ul>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Second Card -->
-        <div class=" card card2" style="width: 18rem; height: 6rem;">
-            <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
-                <h4 class="info" id="tomorrow"></h4>
-                <p class="info" id="tomorrowTemp"></p>
-                <p class="info" id="description2"></p>
-            </div>
-            <img src="..." class="card-img-top" alt="">
-            <div class="card-body cardTwo">
-                <ul class="card-text2">
-
-                </ul>
-            </div>
-        </div>
-
-        <!-- 3rd Card -->
-        <div class=" card card3" style="width: 18rem;height: 6rem">
-            <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
-                <h4 class="info" id="dayAfter" ></h4>
-                <p class="info" id="afterTemp"></p>
-                <p class="info" id="description3"></p>
-            </div>
-            <img src="..." class="card-img-top" alt="">
-            <div class="card-body cardThree">
-                <ul class="card-text3"></ul>
-            </div>
-        </div>
-
-        <!-- 4th Card -->
-        <div class="card card4" style="width: 18rem;height: 6rem">
-            <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
-                <h4 class="info" id="dayFour"></h4>
-                <p class="info" id="dayfourTemp"></p>
-                <p class="info" id="description4"></p>
-            </div>
-            <img src="..." class="card-img-top" alt="">
-            <div class="card-body cardFour">
-                <ul class="card-text4"></ul>
-            </div>
-        </div>
-
-        <!-- 5th Card -->
-        <div class=" card card5" style="width: 18rem;height: 6rem">
-            <div class=" mainCard d-flex-column  align-items-center justify-content-center ">
-                <h4 class="info" id="dayFive"></h4>
-                <p class="info" id="dayfiveTemp"></p>
-                <p class="info" id="description5"></p>
-            </div>
-            <img src="..." class="card-img-top" alt="">
-            <div class="card-body cardFive">
-                <ul class="card-text5">Some quick example text to build on the card title and make up the bulk of the card's content.</ul>
-            </div>
-        </div>
-
     </div>
+
 
     <!--MAP DIMENSIONS -->
     <div class="container d-flex justify-content-center align-items-center" id='map'></div>
