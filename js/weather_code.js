@@ -26,6 +26,10 @@ function WeatherApp(){
 
     $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
         console.log(resp.daily);
+        var theDate = dayTimeHTML(resp.daily[0]);
+        var currentTemp = resp.daily[0].temp.day;
+        $('#today').html(theDate.day + " " + theDate.month + " " + theDate.date);
+        $('#currentTemp').html("Current Temp: " + currentTemp.toFixed(0) + "&deg" + "F");
 
        for(let i = 0; i < resp.daily.length; i++){
            var date = dayTimeHTML(resp.daily[i]);
@@ -224,6 +228,15 @@ function WeatherApp(){
 
             }action5();
 
+            function action6(){
+                $('strong').hover(function (){
+                    $(this).css({'color' : 'chocolate'});
+                },
+                    function(){
+                    $(this).css({'color' : 'initial'});
+                    })
+            }action6();
+
 
         }
         actions();
@@ -232,7 +245,7 @@ function WeatherApp(){
 }
 WeatherApp();
 
-
+var Input = $('#input').val();
 
 
 // START POSITION IN THE MAP
@@ -297,12 +310,6 @@ var pushingCord = marker.on('dragend', function () {
 
     WeatherApp(coordinates);
 
-
-
-
-
-
-
     //  WHEN DRAG THE MOUSE, REMOVE THE POPUP
     marker.setPopup();
 });
@@ -314,12 +321,12 @@ marker.setPopup(popup);
 popup.addClassName('popup-font')
 
 // SHOW THE COORDINATES WHEN YOU PASS AN ADDRESS
-geocode('San Antonio', MAPBOX_ACCESS_TOKEN).then(function (results) {
+geocode('Dallas', MAPBOX_ACCESS_TOKEN).then(function (results) {
     console.log(results);
 });
 
 // SHOW THE ADDRESS COORDINATES
-reverseGeocode({lng: -96.79, Lat: 32.77}, MAPBOX_ACCESS_TOKEN).then(function (results) {
+reverseGeocode({lng: -96.7969, Lat: 32.7763}, MAPBOX_ACCESS_TOKEN).then(function (results) {
     console.log(results);
 });
 
@@ -329,6 +336,12 @@ $("#btn").click(function () {
     var userInput = $("#input").val();
     geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
         console.log(info);
+        var Lat = parseFloat(info[0]);
+        var Lng = parseFloat(info[1]);
+
+        coordinates = [Lng, Lat];
+        WeatherApp(coordinates);
+        console.log(coordinates);
         var newCenter = {
             lng: info[0],
             lat: info[1]
@@ -336,6 +349,7 @@ $("#btn").click(function () {
         marker.setLngLat(newCenter);//Update the coordinate
         popup.setHTML('<h3 class="font">' + userInput + '</h3>');
         map.flyTo({center: newCenter});
+
     });
 });
 

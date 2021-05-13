@@ -4,6 +4,7 @@
 
 body{
     background-color: #3B94D9;
+    color: #05386B;
 }
 
 li{
@@ -27,6 +28,8 @@ ul{
      height:40rem;
      width:100rem;
      margin-top: 5rem;
+     border: solid black 10px;
+     border-radius: 1rem;
  }
  .search{
      margin-top: 1rem;
@@ -40,7 +43,7 @@ ul{
 
  .card{
      margin: 1rem;
-     border: #05386B solid  4px;
+     border: black solid  5px;
      border-radius: 1rem;
      width: 18rem;
      height:8rem;
@@ -57,4 +60,11 @@ ul{
 
  .TempC{
      padding-bottom: 10rem;
+ }
+ .header{
+     background-color: whitesmoke;
+     width:10%;
+     border: #05386B solid  4px;
+     border-radius: 1rem;
+     padding-left: 10px;
  }
