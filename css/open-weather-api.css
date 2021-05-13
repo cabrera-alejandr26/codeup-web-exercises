@@ -9,34 +9,23 @@ body{
 li{
     list-style: none;
     padding-bottom: .5rem;
+
 }
-.card-text1 .card-text2 {
+
+ul{
     padding: 0;
 }
-.cardOne{
-    visibility: hidden;
-}.cardTwo{
-    visibility: hidden;
-}.cardThree{
-    visibility: hidden;
-}.cardFour{
-    visibility: hidden;
-}.cardFive{
-    visibility: hidden;
-}
 
 
- .info{
-     margin-bottom: 0;
- }
 
- .mainCard {
-     margin-left: 1rem;
+
+ .topInfo{
+     padding-left: 2rem;
  }
 
  #map{
      height:40rem;
-     width:200rem;
+     width:100rem;
      margin-top: 5rem;
  }
  .search{
@@ -53,6 +42,17 @@ li{
      margin: 1rem;
      border: #05386B solid  4px;
      border-radius: 1rem;
+     width: 18rem;
+     height:8rem;
+ }
+
+ .Card1 .Card2 .Card3 .Card4 .Card5{
+     visibility: hidden;
+     padding-left: 2rem;
+ }
+
+ .card-text{
+     visibility: hidden;
  }
 
  .TempC{
