@@ -10,24 +10,55 @@
 
 </head>
 <body class="container-fluid d-flex-column justify-content-center align-items-center">
-    <h1>Weather Void</h1>
-    <div class="header d-flex-wrap justify-content-start align-items-center">
-        <h2 id="location"></h2>
-        <h3 id="today"></h3>
-        <p id="currentTemp"></p>
+
+
+
+
+    <!--HERE BUTTON FOR LOOKING FOR THE ADDRESS-->
+    <div class="container">
+        <div class="Main row align-items-center justify-content-center ">
+            <div class="col-8 align-items-center justify-content-center">
+                <div class="Title row d-flex align-items-center justify-content-start">
+                    <h1 id="www">World Wide Weather</h1>
+                </div>
+                <div class="Find row d-flex align-items-center justify-content-start ">
+                    <div class="col-9 align-items-center justify-content-center">
+                        <div class="Searchbar row align-items-center justify-content-start ">
+                            <label for="input"></label>
+                            <input class= type="text" id="input" placeholder="Type address">
+                        </div>
+
+                    </div>
+                    <div class="col-3 align-items-center justify-content-center">
+                        <div class="theButton row align-items-end justify-content-center">
+                            <button id="btn">Click</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="row align-items-center justify-content-center">
+                    <div class="header">
+                        <h2 id="location"></h2>
+                        <h3 id="today"></h3>
+                        <p id="currentTemp"></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
 
 
     <!--MAP DIMENSIONS -->
     <div class="container  d-flex justify-content-center align-items-center " id='map'></div>
 
-    <!--HERE BUTTON FOR LOOKING FOR THE ADDRESS-->
 
-    <div class="search d-flex justify-content-center align-items-center">
-        <label for="input"></label>
-        <input type="text" id="input" placeholder="Type address">
-        <button id="btn">Click</button>
-    </div>
+
+
 
     <div class=" TempC  row justify-content-center align-items-center">
 

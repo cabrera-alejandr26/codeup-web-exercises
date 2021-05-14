@@ -27,26 +27,37 @@ ul{
  #map{
      height:40rem;
      width:100rem;
-     margin-top: 5rem;
+     margin-top: .5rem;
      border: solid black 10px;
      border-radius: 1rem;
  }
- .search{
-     margin-top: 1rem;
+ #input{
+     width:40rem;
+     height:3rem;
+     border: solid black 5px;
+     border-radius: 1rem;
+     /*margin-right: auto;*/
+     /*margin-top: 5rem;*/
  }
 
  button{
      background-color: #05386B;
      color: whitesmoke;
-     border-radius: 10%;
+     border: solid black 5px;
+     border-radius: 1rem;
+     width:10rem;
+     height:2.5rem;
+     /*margin-right: 1rem;*/
+     /*margin-left: 1rem;*/
+
  }
 
  .card{
      margin: 1rem;
      border: black solid  5px;
      border-radius: 1rem;
-     width: 18rem;
-     height:8rem;
+     /*width: 18rem;*/
+     /*height:8rem;*/
  }
 
  .Card1 .Card2 .Card3 .Card4 .Card5{
@@ -63,8 +74,36 @@ ul{
  }
  .header{
      background-color: whitesmoke;
-     width:10%;
-     border: #05386B solid  4px;
+     width:20rem;
+     height:7rem;
+     border:black solid  4px;
      border-radius: 1rem;
-     padding-left: 10px;
+     padding-left:10px;
+
  }
+
+ #today{
+     font-size: 28px;
+     /*margin: 10px;*/
+ }
+ #currentTemp{
+     font-size: 30px;
+     margin:0;
+ }
+
+/*.weather{*/
+/*    margin-right:5rem;*/
+/*    margin-top: 40rem;*/
+/*}*/
+
+.Title{
+    padding-left: 1rem;
+}
+
+#www{
+    color: black !important;
+}
+
+.theButton{
+    margin-top: .5rem;
+}
