@@ -3,8 +3,13 @@
 }
 
 body{
-    background-color: #3B94D9;
-    color: #05386B;
+    background-image: url(../Images/hd-clouds-png-transparent-background-clouds-png-free-unlimited-cloud-background-png-1921_712.png), url(../Images/black-cloud.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding:0;
+    background-color: #79c7c5;
+    color: black;
 }
 
 li{
@@ -13,21 +18,33 @@ li{
 
 }
 
-ul{
-    padding: 0;
+.Main{
+    /*background-color:#99d19c;*/
+
 }
 
 
 
 
- .topInfo{
-     padding-left: 2rem;
+
+
+ .dataBox{
+     background-color: rgba(225,225,225,0.6);
+     border: solid black 5px;
+     border-radius: 1rem;
+     margin-top: 1rem;
+     margin-bottom: 1rem;
+
+ }
+
+ .lastRow{
+     background-color: rgba(115,171,132,0.3);
  }
 
  #map{
-     height:40rem;
-     width:100rem;
-     margin-top: .5rem;
+     height:50rem;
+     width:70vw;
+     margin: 0 !important;
      border: solid black 10px;
      border-radius: 1rem;
  }
@@ -47,31 +64,9 @@ ul{
      border-radius: 1rem;
      width:10rem;
      height:2.5rem;
-     /*margin-right: 1rem;*/
-     /*margin-left: 1rem;*/
-
  }
 
- .card{
-     margin: 1rem;
-     border: black solid  5px;
-     border-radius: 1rem;
-     /*width: 18rem;*/
-     /*height:8rem;*/
- }
 
- .Card1 .Card2 .Card3 .Card4 .Card5{
-     visibility: hidden;
-     padding-left: 2rem;
- }
-
- .card-text{
-     visibility: hidden;
- }
-
- .TempC{
-     padding-bottom: 10rem;
- }
  .header{
      background-color: whitesmoke;
      width:20rem;
@@ -101,9 +96,23 @@ ul{
 }
 
 #www{
+    font-size: 80px;
     color: black !important;
 }
 
 .theButton{
     margin-top: .5rem;
+}
+
+.infoSource{
+    margin-top:5rem !important;
+    padding: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+footer{
+    background-color: #73ab84;
+    padding: 2rem;
+    margin-top: 12rem;
 }

@@ -24,13 +24,13 @@ var coordinates = [29.4241200, -98.4936300];
 
 function WeatherApp(){
 
-    $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=hourly,minutely&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
-        console.log(resp.daily);
+    $.ajax("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&appid=" + WEATHER_MAP_TOKEN).done(function(resp){
+        console.log(resp);
         var theDate = dayTimeHTML(resp.daily[0]);
-        var currentTemp = resp.daily[0].temp.day;
+        var currentTemp = resp.current.temp;
         $('#today').html(theDate.day + " " + theDate.month + " " + theDate.date);
         $('#currentTemp').html( currentTemp.toFixed(0) + "&deg" + "F");
-
+        $('.TempC').html("");
        for(let i = 0; i < resp.daily.length; i++){
            var date = dayTimeHTML(resp.daily[i]);
            var CardDate = date.day + " " + date.month + " " + date.date;
@@ -41,211 +41,111 @@ function WeatherApp(){
            var SunsetHour = Sunset.getHours();
            var SunsetMin = Sunset.getMinutes();
 
-           console.log(Sunrise);
 
-           if(i === 0){
-               $('.TempC').html("");
-             var  heartOfTheCards =  "<div class='card Full Box1'>";
-               heartOfTheCards += "<div class='topInfo'>";
-               heartOfTheCards += "<h4 class='row justify-content-start'>" + CardDate + "</h4>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].temp.day.toFixed(0) + "&deg" + "F" + "</strong>" + "</p>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].weather[0].description + "</strong>" + "</p>";
-               heartOfTheCards += "<img src='' class ='card-img-top'>"
-               heartOfTheCards += "</div>";
-               heartOfTheCards += "<div class='card-body Card1'>";
-               heartOfTheCards += "<ul class='card-text text1 d-flex-column justify-content-start align-items-start'>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Humidity:" + "</strong>" + resp.daily[i].humidity + "%" + "</li>";
-               heartOfTheCards += "<li class='row '>" + "<strong>" + "Max Temp: " + "</strong>" + resp.daily[i].temp.max.toFixed(0) + "&deg" + "F" + " | " + "<strong>" + "Min Temp: " + "</strong>" + resp.daily[i].temp.min.toFixed(0) + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Morning: " + "</strong>" + resp.daily[i].temp.morn.toFixed(0) + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Evening: " + "</strong>" + resp.daily[i].temp.eve.toFixed(0) + "&deg" + "F"+ "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Night: " + "</strong>" + resp.daily[i].temp.night.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Sunrise: " + "</strong>" + SunriseHour + ":" + SunriseMin + "am" +  " | " + "<strong>" + "Sunset: " + "</strong>" + SunsetHour + ":" + SunsetMin + "pm" + "</li>";
-               heartOfTheCards += "</ul>";
-               heartOfTheCards += '</div>';
 
-               heartOfTheCards += "</div>";
-           }
-           if(i === 1){
 
-               heartOfTheCards =  "<div class='card Full Box2'>";
-               heartOfTheCards += "<div class='topInfo'>";
-               heartOfTheCards += "<h4 class='row justify-content-start'>" + CardDate + "</h4>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].temp.day.toFixed(0) + "&deg" + "F" + "</strong>" + "</p>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].weather[0].description + "</strong>" + "</p>";
-               heartOfTheCards += "<img src='' class ='card-img-top'>"
-               heartOfTheCards += "</div>";
-               heartOfTheCards += "<div class='card-body Card2'>";
-               heartOfTheCards += "<ul class='card-text  text2 d-flex-column justify-content-start align-items-start'>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Humidity: " + "</strong>" + resp.daily[i].humidity + "%" + "</li>";
-               heartOfTheCards += "<li class='row '>" + "<strong>" + "Max Temp: " + "</strong>" + resp.daily[i].temp.max.toFixed(0) + "&deg" + "F" +" | " + "<strong>" + "Min Temp: " + "</strong>" + resp.daily[i].temp.min.toFixed(0)+ "&deg" + "F"  + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Morning: " + "</strong>" + resp.daily[i].temp.morn.toFixed(0) + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Evening: " + "</strong>" + resp.daily[i].temp.eve.toFixed(0) + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Night: " + "</strong>" + resp.daily[i].temp.night.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Sunrise: " + "</strong>" + SunriseHour + ":" + SunriseMin + "am" +  " | " + "<strong>" + "Sunset: " + "</strong>" + SunsetHour + ":" + SunsetMin + "pm" + "</li>";
-               heartOfTheCards += "</ul>";
-               heartOfTheCards += '</div>';
-
-               heartOfTheCards += "</div>";
-           }
-           if(i === 2){
-               heartOfTheCards =  "<div class='card Full Box3'>";
-               heartOfTheCards += "<div class='topInfo'>";
-               heartOfTheCards += "<h4 class='row justify-content-start'>" + CardDate + "</h4>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].temp.day.toFixed(0) + "&deg" + "F" + "</strong>" + "</p>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].weather[0].description + "</strong>" + "</p>";
-               heartOfTheCards += "<img src='' class ='card-img-top'>"
-               heartOfTheCards += "</div>";
-               heartOfTheCards += "<div class='card-body Card3'>";
-               heartOfTheCards += "<ul class='card-text text3 d-flex-column justify-content-start align-items-start'>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Humidity: " + "</strong>" + resp.daily[i].humidity + '%' + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row '>" + "<strong>" + "Max Temp: " + "</strong>" + resp.daily[i].temp.max.toFixed(0)+ "&deg" + "F" +" | " + "<strong>" + "Min Temp: " + "</strong>" + resp.daily[i].temp.min.toFixed(0)+ "&deg" + "F"  + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Morning: " + "</strong>" + resp.daily[i].temp.morn.toFixed(0) + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Evening: " + "</strong>" + resp.daily[i].temp.eve.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Night: " + "</strong>" + resp.daily[i].temp.night.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Sunrise: " + "</strong>" + SunriseHour + ":" + SunriseMin + "am" +  " | " + "<strong>" + "Sunset: " + "</strong>" + SunsetHour + ":" + SunsetMin + "pm" + "</li>";
-               heartOfTheCards += "</ul>";
-               heartOfTheCards += '</div>';
-
-               heartOfTheCards += "</div>";
-           }
-           if(i === 3){
-               heartOfTheCards =  "<div class='card Full Box4'>";
-               heartOfTheCards += "<div class='topInfo'>";
-               heartOfTheCards += "<h4 class='row justify-content-start'>" + CardDate + "</h4>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].temp.day.toFixed(0) + "&deg" + "F" + "</strong>" + "</p>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].weather[0].description + "</strong>" + "</p>";
-               heartOfTheCards += "<img src='' class ='card-img-top'>"
-               heartOfTheCards += "</div>";
-               heartOfTheCards += "<div class='card-body Card4'>";
-               heartOfTheCards += "<ul class='card-text text4 d-flex-column justify-content-start align-items-start'>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Humidity: " + "</strong>" + resp.daily[i].humidity +"%" + "</li>";
-               heartOfTheCards += "<li class='row '>" + "<strong>" + "Max Temp: " + "</strong>" + resp.daily[i].temp.max.toFixed(0)+ "&deg" + "F" +" | " + "<strong>" + "Min Temp: " + "</strong>" + resp.daily[i].temp.min.toFixed(0)+ "&deg" + "F"  + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Morning: " + "</strong>" + resp.daily[i].temp.morn.toFixed(0) + "&deg" + "F"+ "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Evening: " + "</strong>" + resp.daily[i].temp.eve.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Night: " + "</strong>" + resp.daily[i].temp.night.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Sunrise: " + "</strong>" + SunriseHour + ":" + SunriseMin + "am" +  " | " + "<strong>" + "Sunset: " + "</strong>" + SunsetHour + ":" + SunsetMin + "pm" + "</li>";
-               heartOfTheCards += "</ul>";
-               heartOfTheCards += '</div>';
-
-               heartOfTheCards += "</div>";
-           }
-           if(i === 4){
-               heartOfTheCards =  "<div class='card Full Box5'>";
-               heartOfTheCards += "<div class='topInfo'>";
-               heartOfTheCards += "<h4 class='row justify-content-start'>" + CardDate + "</h4>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].temp.day.toFixed(0) + "&deg" + "F" + "</strong>" + "</p>";
-               heartOfTheCards += "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].weather[0].description + "</strong>" + "</p>";
-               heartOfTheCards += "<img src='' class ='card-img-top'>"
-               heartOfTheCards += "</div>";
-               heartOfTheCards += "<div class='card-body Card5'>";
-               heartOfTheCards += "<ul class='card-text text5 d-flex-column justify-content-start align-items-start'>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Humidity: " + "</strong>" + resp.daily[i].humidity + "%" + "</li>";
-               heartOfTheCards += "<li class='row '>" + "<strong>" + "Max Temp: " + "</strong>" + resp.daily[i].temp.max.toFixed(0)+ "&deg" + "F" +" | " + "<strong>" + "Min Temp: " + "</strong>" + resp.daily[i].temp.min.toFixed(0)+ "&deg" + "F"  + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Morning: " + "</strong>" + resp.daily[i].temp.morn.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Evening: " + "</strong>" + resp.daily[i].temp.eve.toFixed(0) + "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Night: " + "</strong>" + resp.daily[i].temp.night.toFixed(0)+ "&deg" + "F" + "</li>";
-               heartOfTheCards += "<li class='row'>" + "<strong>" + "Sunrise: " + "</strong>" + SunriseHour + ":" + SunriseMin + "am" +  " | " + "<strong>" + "Sunset: " + "</strong>" + SunsetHour + ":" + SunsetMin + "pm" + "</li>";
-               heartOfTheCards += "</ul>";
-               heartOfTheCards += '</div>';
-
-               heartOfTheCards += "</div>";
-           }
+             var  heartOfTheCards =  "<div class='row dataBox'>";
+                heartOfTheCards += "<div class='col-4'>" + "<div class='topInfo'>" + "<h4 class='row justify-content-start'>" + CardDate + "</h4>" + "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].temp.day.toFixed(0) + "&deg" + "F" + "</strong>" + "</p>" + "<p class='row justify-content-start'>" + "<strong>" + resp.daily[i].weather[0].description + "</strong>" + "</p>" + "</div>" + "</div>";
+                heartOfTheCards += "<div class='col-4'>" + "<li class='row'>" + "<strong>" + "Humidity:" + "</strong>" + resp.daily[i].humidity + "%" + "</li>" + "<li class='row '>" + "<strong>" + "Max Temp: " + "</strong>" + resp.daily[i].temp.max.toFixed(0) + "&deg" + "F" + "</li>" + "<li class='row'>" + "<strong>" + "Min Temp: " + "</strong>" + resp.daily[i].temp.min.toFixed(0) + "&deg" + "F" + "</li>" + "</div>";
+                heartOfTheCards += "<div class='col-4'>"+ "<li class='row'>" + "<strong>" + "Morning: " + "</strong>" + resp.daily[i].temp.morn.toFixed(0) + "&deg" + "F" + "</li>" + "<li class='row'>" + "<strong>" + "Evening: " + "</strong>" + resp.daily[i].temp.eve.toFixed(0) + "&deg" + "F"+ "</li>" + "<li class='row'>" + "<strong>" + "Night: " + "</strong>" + resp.daily[i].temp.night.toFixed(0)+ "&deg" + "F" + "</li>" +"</div>";
+                heartOfTheCards += "<div class='col-12 lastRow'>" + "<strong>" + "Sunrise: " + "</strong>" + SunriseHour + ":" + SunriseMin + "am" +  " | " + "<strong>" + "Sunset: " + "</strong>" + SunsetHour + ":" + SunsetMin + "pm" + "</div>";
+                heartOfTheCards += "</div>";
            $('.TempC').append(heartOfTheCards);
-
            if(i === 4){
                break;
            }
+
        }
 
-        function actions(){
-            function action1(){
-                $('.Box1').hover(function(){
-                        $(this).css({'height' : '27rem'});
-                        $('.Card1').css({'visibility' : 'visible'});
-                        $('.text1').css({'visibility' : 'visible'});
-                    },
-                    function(){
-                        $(this).css({'height' : '8rem'});
-                        $('.Card1').css({'visibility' : 'hidden'});
-                        $('.text1').css({'visibility' : 'hidden'});
-                    })
-
-            }action1();
-
-            function action2(){
-                $('.Box2').hover(function(){
-                        $(this).css({'height' : '27rem'});
-                        $('.Card2').css({'visibility' : 'visible'});
-                        $('.text2').css({'visibility' : 'visible'});
-                    },
-                    function(){
-                        $(this).css({'height' : '8rem'});
-                        $('.Card2').css({'visibility' : 'hidden'});
-                        $('.text2').css({'visibility' : 'hidden'});
-                    })
-
-            }action2();
-
-            function action3(){
-                $('.Box3').hover(function(){
-                        $(this).css({'height' : '27rem'});
-                        $('.Card3').css({'visibility' : 'visible'});
-                        $('.text3').css({'visibility' : 'visible'});
-                    },
-                    function(){
-                        $(this).css({'height' : '8rem'});
-                        $('.Card3').css({'visibility' : 'hidden'});
-                        $('.text3').css({'visibility' : 'hidden'});
-                    })
-
-            }action3();
-
-            function action4(){
-                $('.Box4').hover(function(){
-                        $(this).css({'height' : '27rem'});
-                        $('.Card4').css({'visibility' : 'visible'});
-                        $('.text4').css({'visibility' : 'visible'});
-                    },
-                    function(){
-                        $(this).css({'height' : '8rem'});
-                        $('.Card4').css({'visibility' : 'hidden'});
-                        $('.text4').css({'visibility' : 'hidden'});
-                    })
-
-            }action4();
-
-            function action5(){
-                $('.Box5').hover(function(){
-                        $(this).css({'height' : '27rem'});
-                        $('.Card5').css({'visibility' : 'visible'});
-                        $('.text5').css({'visibility' : 'visible'});
-                    },
-                    function(){
-                        $(this).css({'height' : '8rem'});
-                        $('.Card5').css({'visibility' : 'hidden'});
-                        $('.text5').css({'visibility' : 'hidden'});
-                    })
-
-            }action5();
-
-            function action6(){
-                $('strong').hover(function (){
-                    $(this).css({'color' : 'chocolate'});
-                },
-                    function(){
-                    $(this).css({'color' : 'initial'});
-                    })
-            }action6();
-
-
-        }
-        actions();
+        // function actions(){
+        //     function action1(){
+        //         $('.Box1').hover(function(){
+        //                 $(this).css({'height' : '27rem'});
+        //                 $('.Card1').css({'visibility' : 'visible'});
+        //                 $('.text1').css({'visibility' : 'visible'});
+        //             },
+        //             function(){
+        //                 $(this).css({'height' : '8rem'});
+        //                 $('.Card1').css({'visibility' : 'hidden'});
+        //                 $('.text1').css({'visibility' : 'hidden'});
+        //             })
+        //
+        //     }action1();
+        //
+        //     function action2(){
+        //         $('.Box2').hover(function(){
+        //                 $(this).css({'height' : '27rem'});
+        //                 $('.Card2').css({'visibility' : 'visible'});
+        //                 $('.text2').css({'visibility' : 'visible'});
+        //             },
+        //             function(){
+        //                 $(this).css({'height' : '8rem'});
+        //                 $('.Card2').css({'visibility' : 'hidden'});
+        //                 $('.text2').css({'visibility' : 'hidden'});
+        //             })
+        //
+        //     }action2();
+        //
+        //     function action3(){
+        //         $('.Box3').hover(function(){
+        //                 $(this).css({'height' : '27rem'});
+        //                 $('.Card3').css({'visibility' : 'visible'});
+        //                 $('.text3').css({'visibility' : 'visible'});
+        //             },
+        //             function(){
+        //                 $(this).css({'height' : '8rem'});
+        //                 $('.Card3').css({'visibility' : 'hidden'});
+        //                 $('.text3').css({'visibility' : 'hidden'});
+        //             })
+        //
+        //     }action3();
+        //
+        //     function action4(){
+        //         $('.Box4').hover(function(){
+        //                 $(this).css({'height' : '27rem'});
+        //                 $('.Card4').css({'visibility' : 'visible'});
+        //                 $('.text4').css({'visibility' : 'visible'});
+        //             },
+        //             function(){
+        //                 $(this).css({'height' : '8rem'});
+        //                 $('.Card4').css({'visibility' : 'hidden'});
+        //                 $('.text4').css({'visibility' : 'hidden'});
+        //             })
+        //
+        //     }action4();
+        //
+        //     function action5(){
+        //         $('.Box5').hover(function(){
+        //                 $(this).css({'height' : '27rem'});
+        //                 $('.Card5').css({'visibility' : 'visible'});
+        //                 $('.text5').css({'visibility' : 'visible'});
+        //             },
+        //             function(){
+        //                 $(this).css({'height' : '8rem'});
+        //                 $('.Card5').css({'visibility' : 'hidden'});
+        //                 $('.text5').css({'visibility' : 'hidden'});
+        //             })
+        //
+        //     }action5();
+        //
+        //     function action6(){
+        //         $('strong').hover(function (){
+        //             $(this).css({'color' : 'chocolate'});
+        //         },
+        //             function(){
+        //             $(this).css({'color' : 'initial'});
+        //             })
+        //     }action6();
+        //
+        //
+        // }
+        // actions();
 
     })//some data will have to be removed later on
 }
 WeatherApp();
 
-var Input = $('#input').val();
+
 
 
 // START POSITION IN THE MAP
