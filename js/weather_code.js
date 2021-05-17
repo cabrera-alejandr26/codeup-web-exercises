@@ -169,11 +169,11 @@ setTimeout(function () {
 }, 500);
 
 // ADD ZOOM AND ROTATION CONTROLS TO THE MAP
-map.addControl(new mapboxgl.NavigationControl());
+// map.addControl(new mapboxgl.NavigationControl());
 
 // MARKER OBJECTS SET OPTIONS
 var marker = new mapboxgl.Marker({
-    color: "red",
+    color: "blue",
 })
     .setLngLat([-98.48852, 29.41725])
     .addTo(map)
@@ -191,7 +191,7 @@ var popup = new mapboxgl.Popup()
 
 
 
-var pushingCord = marker.on('dragend', function () {
+marker.on('dragend', function () {
     // $('h1').html(marker.getLngLat().toString());
     // var stringVal = marker.getLngLat().toString().replace("LngLat",'').replace("(",'').replace(")",'');
     var stringVal = marker.getLngLat();
@@ -226,7 +226,7 @@ geocode('Dallas', MAPBOX_ACCESS_TOKEN).then(function (results) {
 });
 
 // SHOW THE ADDRESS COORDINATES
-reverseGeocode({lng: -96.7969, Lat: 32.7763}, MAPBOX_ACCESS_TOKEN).then(function (results) {
+reverseGeocode({latLex, longLex}, MAPBOX_ACCESS_TOKEN).then(function (results) {
     console.log(results);
 });
 
